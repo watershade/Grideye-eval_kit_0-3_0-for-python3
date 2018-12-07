@@ -9,3 +9,6 @@ It runs on PC. It use serial to communite with MCU.
 >This software code is made by panasonic, I just do some simple job base it. So please fellow they rules. Otherwise, fell free to use it.
 
 >If my project is improper to panasonic. Please let me know. Thanks. 
+
+## The related project
+>This project is running on pc. You also need hardware to communicate with it. I upload a new project named [GridEyeKit_Arduino_AMG8833_PIO_Code](https://github.com/watershade/GridEyeKit_Arduino_AMG8833_PIO_Code). Please fell free to read it.
