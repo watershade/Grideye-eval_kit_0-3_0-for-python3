@@ -1,0 +1,11 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "native",
+      "name": "E:\\Workspace\\FunProject\\FIR_Detector\\grideye-eval_kit_0-3_0_py3",
+      "project": ""
+    }
+  ]
+}

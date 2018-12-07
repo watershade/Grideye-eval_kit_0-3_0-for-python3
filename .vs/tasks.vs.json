@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-Evalkit GUI V0.3",
+      "appliesTo": "Evalkit GUI V0.3.py",
+      "type": "launch"
+    },
+    {
+      "taskName": "task-grideye-eval_kit_0-3_0_py3",
+      "appliesTo": "/",
+      "type": "launch"
+    }
+  ]
+}
