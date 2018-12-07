@@ -26,7 +26,8 @@ class GridEYEKit():
         self.tarr_queue = Queue(1)
         self.thermistor_queue = Queue(1)
         self.multiplier_tarr = 0.25
-        self.multiplier_th = 0.0125   # the value here in  original code is 0.0125, but I think it is wrong. Reference:ADI8000C53.pdf 
+        # the value here in  original code is 0.0125, but I think it is wrong. Reference:ADI8000C53.pdf
+        self.multiplier_th = 0.0125
         self._error = 0
        # if not self.connect():
        #     print "please connect Eval Kit"
@@ -103,9 +104,11 @@ class GridEYEKit():
             # Grid-Eye uses 12 bit signed data for calculating thermistor
             if not data[1] & 0b00001000 == 0:
                 data[1] &= 0b00000111
-                thermistor = -struct.unpack('<h', data[0:2])[0] * self.multiplier_th
+                thermistor = - \
+                    struct.unpack('<h', data[0:2])[0] * self.multiplier_th
             else:
-                thermistor = struct.unpack('<h', data[0:2])[0] * self.multiplier_th
+                thermistor = struct.unpack('<h', data[0:2])[
+                    0] * self.multiplier_th
             r = 0
             c = 0
             for i in range(2, 130, 2):  # 2,130
@@ -115,7 +118,8 @@ class GridEYEKit():
                     # if 12 bit complement, set bits 12 to 16 to convert to 16 bit two's complement
                     data[i + 1] |= 0b11111000
                 # combine hign and low byte to short int and calculate temperature
-                tarr[r][c] = struct.unpack('<h', data[i:i + 2])[0] * self.multiplier_tarr
+                tarr[r][c] = struct.unpack(
+                    '<h', data[i:i + 2])[0] * self.multiplier_tarr
                 c = c + 1
                 if c == 8:
                     r = r + 1
